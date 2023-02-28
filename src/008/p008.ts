@@ -1,4 +1,4 @@
-const arrayProduct = (arr: number[]): number => arr.reduce((a, b) => a * b, 1);
+import { arrayProduct } from "../utils";
 
 export const solve = (): string => {
   const input = `\
