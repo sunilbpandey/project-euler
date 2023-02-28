@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "husky install",
+    "start": "ts-node src/solve.ts",
     "test": "jest"
   },
   "repository": {
