@@ -16,6 +16,7 @@ const solutions = [
   { problem: 15, solution: "137846528820" },
   { problem: 16, solution: "1366" },
   { problem: 17, solution: "21124" },
+  { problem: 18, solution: "1074" },
 ];
 
 describe("Project Euler", () => {
