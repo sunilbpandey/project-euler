@@ -1,0 +1,2 @@
+# Counting Sundays
+There are multiple ways to solve this problem. We need to go through every year and every month, and find the day of the week for the first of that month. Some programming languages provide a built-in function to return the weekday for any date. Or without using built-in functions, we can calculate the weekday using [Zeller's congruence](https://en.wikipedia.org/wiki/Zeller%27s_congruence). Yet another approach is to count the number of days since 1901-01-01 and take modulo 7.
