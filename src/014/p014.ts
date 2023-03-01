@@ -1,12 +1,15 @@
 const getCollatzSequenceLength = (
-  n: number,
+  start: number,
   chainLengths: { [key: number]: number }
 ): number => {
-  if (chainLengths[n] === undefined) {
-    const next = n % 2 === 0 ? n / 2 : 3 * n + 1;
-    chainLengths[n] = getCollatzSequenceLength(next, chainLengths) + 1;
+  let n = start;
+  let len = 0;
+  while (chainLengths[n] === undefined) {
+    len++;
+    n = n % 2 === 0 ? n / 2 : 3 * n + 1;
   }
-  return chainLengths[n];
+  chainLengths[start] = len + chainLengths[n];
+  return chainLengths[start];
 };
 
 export const solve = (): string => {
