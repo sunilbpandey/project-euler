@@ -1,10 +1,4 @@
-const factorial = (n: number): number => {
-  let fac = 1;
-  for (let i = 1; i <= n; i++) {
-    fac *= i;
-  }
-  return fac;
-};
+import { factorial } from "../utils";
 
 export const solve = (): string => {
   const n = 20;
