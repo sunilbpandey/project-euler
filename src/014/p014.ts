@@ -1,6 +1,6 @@
 const getCollatzSequenceLength = (
   start: number,
-  chainLengths: { [key: number]: number }
+  chainLengths: Record<number, number>
 ): number => {
   let n = start;
   let len = 0;
@@ -13,7 +13,7 @@ const getCollatzSequenceLength = (
 };
 
 export const solve = (): string => {
-  const chainLengths: { [key: number]: number } = {};
+  const chainLengths: Record<number, number> = {};
   chainLengths[1] = 1;
 
   let maxChainLength = 0;

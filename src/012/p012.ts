@@ -8,7 +8,7 @@ const divide = (n: number, d: number) => {
 };
 
 const factorize = (n: number) => {
-  const factors: { [key: number]: number } = {};
+  const factors: Record<number, number> = {};
 
   const factorizeInternal = (d: number) => {
     const { remainder, exponent } = divide(n, d);

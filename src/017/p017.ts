@@ -1,4 +1,4 @@
-const numberNames: { [key: number]: string } = {
+const numberNames: Record<number, string> = {
   1: "one",
   2: "two",
   3: "three",
