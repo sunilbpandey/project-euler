@@ -21,4 +21,5 @@ export const solutions = [
   { problem: 20, solution: "648" },
   { problem: 21, solution: "31626" },
   { problem: 22, solution: "871198282" },
+  { problem: 23, solution: "4179871" },
 ];

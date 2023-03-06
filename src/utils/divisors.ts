@@ -23,14 +23,16 @@ export const countOfDivisors = (n: number) => {
 };
 
 export const sumOfDivisors = (n: number): number => {
-  const factors = factorize(n);
-
-  let num = 1;
-  let den = 1;
-  for (const [p, e] of Object.entries(factors)) {
-    const prime = parseInt(p);
-    num *= prime ** (e + 1) - 1;
-    den *= prime - 1;
+  let sum = 0;
+  let d = 1;
+  for (; d ** 2 < n; d++) {
+    if (n % d === 0) {
+      sum += d + n / d;
+    }
   }
-  return num / den;
+
+  if (d ** 2 === n) {
+    sum += d;
+  }
+  return sum;
 };
