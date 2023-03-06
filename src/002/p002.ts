@@ -1,23 +1,18 @@
-const fibonacci = function* (a = 1, b = 1) {
-  while (true) {
-    yield a;
-    [a, b] = [b, a + b];
-  }
-};
+import { fibonacci } from "../utils";
 
 // Simple implementation using a generator
 export const solve1 = (): string => {
   let sum = 0;
   let index = 0;
-  for (let n of fibonacci()) {
-    if (n > 4000000) {
+  for (const n of fibonacci()) {
+    if (Number(n) > 4000000) {
       break;
     }
 
     // Add every third term
     index++;
     if (index % 3 === 0) {
-      sum += n;
+      sum += Number(n);
     }
   }
   return sum.toString();
