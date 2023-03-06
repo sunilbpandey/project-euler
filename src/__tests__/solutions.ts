@@ -1,4 +1,4 @@
-const solutions = [
+export const solutions = [
   { problem: 1, solution: "233168" },
   { problem: 2, solution: "4613732" },
   { problem: 3, solution: "6857" },
@@ -21,12 +21,3 @@ const solutions = [
   { problem: 20, solution: "648" },
   { problem: 21, solution: "31626" },
 ];
-
-describe("Project Euler", () => {
-  test.each(solutions)("Problem $problem", async ({ problem, solution }) => {
-    const str = problem.toString().padStart(3, "0");
-    const { solve } = await import(`../${str}/p${str}`);
-    const result = solve();
-    expect(result).toBe(solution);
-  });
-});
