@@ -1,13 +1,5 @@
-from typing import Generator
 import itertools
-
-
-def fibonacci(
-    a: int = 1, b: int = 1  # pylint: disable=invalid-name
-) -> Generator[int, None, None]:
-    while True:
-        yield a
-        a, b = b, a + b
+from src.utils.py.series import fibonacci
 
 
 def solve() -> int:
