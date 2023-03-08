@@ -22,4 +22,4 @@ jobs:
       - name: Run MyPy
         run: mypy --strict src
       - name: Run tests
-        run: python -m unittest
+        run: pytest -v
