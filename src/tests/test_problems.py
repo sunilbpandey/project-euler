@@ -4,6 +4,7 @@ import pytest
 SOLUTIONS = [
     {"problem": 1, "solution": "233168"},
     {"problem": 2, "solution": "4613732"},
+    {"problem": 3, "solution": "6857"},
 ]
 
 
