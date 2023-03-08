@@ -4,6 +4,7 @@ import unittest
 
 solutions = [
     {"problem": 1, "solution": "233168"},
+    {"problem": 2, "solution": "4613732"},
 ]
 
 
