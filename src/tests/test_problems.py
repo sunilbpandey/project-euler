@@ -8,6 +8,7 @@ SOLUTIONS = [
     {"problem": 4, "solution": "906609"},
     {"problem": 5, "solution": "232792560"},
     {"problem": 6, "solution": "25164150"},
+    {"problem": 7, "solution": "104743"},
 ]
 
 
