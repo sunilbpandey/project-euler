@@ -28,7 +28,7 @@ def solve() -> int:
 
     # Find all 13-digit substrings and calculate their product
     substring_prod: Callable[[int], int] = lambda i: math.prod(
-        int(input_string[i + j]) for j in range(0, 13)
+        int(s) for s in input_string[i : i + 13]
     )
     largest_product = max(substring_prod(i) for i in range(0, len(input_string) - 13))
     return largest_product
