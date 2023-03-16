@@ -1,11 +1,4 @@
-const divide = (n: number, d: number) => {
-  let exponent = 0;
-  while (n % d === 0) {
-    n /= d;
-    exponent++;
-  }
-  return { remainder: n, exponent };
-};
+import { divide } from "../utils";
 
 export const solve = (): string => {
   const n = 600851475143;

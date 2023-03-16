@@ -23,7 +23,7 @@ export const primes = function* () {
   }
 };
 
-const divide = (n: number, d: number) => {
+export const divide = (n: number, d: number) => {
   let exponent = 0;
   while (n % d === 0) {
     n /= d;

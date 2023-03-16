@@ -5,5 +5,5 @@ export { factorial } from "./factorial";
 export { fibonacci } from "./fibonacci";
 export { gcd } from "./gcd";
 export { lcm } from "./lcm";
-export { factorize, primes } from "./primeNumbers";
+export { divide, factorize, primes } from "./primeNumbers";
 export { range } from "./range";
