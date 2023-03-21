@@ -1,4 +1,4 @@
-from typing import Generator
+from typing import Generator, List
 import math
 
 
@@ -24,6 +24,17 @@ def primes() -> Generator[int, None, None]:
         num += 2
 
 
+def generate_primes(limit: int) -> list[int]:
+    primes = [2]
+    sieve = [False] * limit
+    for i in range(3, limit, 2):
+        if not sieve[i]:
+            primes.append(i)
+            for j in range(i * i, limit, i):
+                sieve[j] = True
+    return primes
+
+
 def factorize_using_primes(num: int) -> dict[int, int]:
     factors: dict[int, int] = {}
     limit = math.floor(math.sqrt(num))
@@ -39,7 +50,7 @@ def factorize_using_primes(num: int) -> dict[int, int]:
     return factors
 
 
-def factorize(num: int) -> dict[int, int]:
+def factorize(num: int, primes: List[int] | None = None) -> dict[int, int]:
     factors: dict[int, int] = {}
 
     def divide_by(divisor: int) -> None:
@@ -50,13 +61,20 @@ def factorize(num: int) -> dict[int, int]:
             num //= divisor
         factors[divisor] = power
 
-    divide_by(2)
-
     limit = math.floor(math.sqrt(num))
-    for divisor in range(3, limit + 1, 2):
-        if num == 1:
-            break
-        divide_by(divisor)
+
+    if primes is None:
+        divide_by(2)
+        for divisor in range(3, limit + 1, 2):
+            if num == 1:
+                break
+            divide_by(divisor)
+    else:
+        for prime in primes:
+            if num == 1 or prime > limit:
+                break
+            divide_by(prime)
+
     if num > 1:
         factors[num] = 1
     return factors

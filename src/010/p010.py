@@ -1,5 +1,5 @@
 import itertools
-from src.utils.py.prime import primes
+from src.utils.py.prime import generate_primes, primes
 
 
 def solve1() -> int:
@@ -8,12 +8,4 @@ def solve1() -> int:
 
 def solve() -> int:
     # Prime sieve approach is much faster than using a generator
-    limit = 2000000
-    sieve = [False] * limit
-    prime_sum = 2
-    for i in range(3, limit, 2):
-        if not sieve[i]:
-            prime_sum += i
-            for j in range(i * i, limit, i):
-                sieve[j] = True
-    return prime_sum
+    return sum(generate_primes(2000000))

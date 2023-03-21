@@ -2,8 +2,9 @@ import math
 from src.utils.py.prime import factorize
 
 
-def count_of_divisors(num: int) -> int:
-    factors = factorize(num)
+def count_of_divisors(num: int, factors: dict[int, int] | None = None) -> int:
+    if factors is None:
+        factors = factorize(num)
     return math.prod(power + 1 for power in factors.values())
 
 
