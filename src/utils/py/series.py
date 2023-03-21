@@ -7,3 +7,12 @@ def fibonacci(
     while True:
         yield a
         a, b = b, a + b
+
+
+def triangle_numbers() -> Generator[int, None, None]:
+    n = 1
+    triangle = 0
+    while True:
+        triangle += n
+        yield triangle
+        n += 1
