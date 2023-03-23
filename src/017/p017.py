@@ -45,5 +45,29 @@ def get_number_name(num: int) -> str:
     return "onethousand"
 
 
-def solve() -> int:
+def solve1() -> int:
     return sum(len(get_number_name(num)) for num in range(1, 1001))
+
+
+def solve() -> int:
+    count = 0
+
+    # "one" to "nine" each appear 190 times
+    count += 190 * sum(len(names[num]) for num in (range(1, 10)))
+
+    # "ten" to "nineteen" each appear 10 times
+    count += 10 * sum(len(names[num]) for num in (range(10, 20)))
+
+    # "twenty" to "ninety" each appear 100 times
+    count += 100 * sum(len(names[num]) for num in (range(20, 100, 10)))
+
+    # "hundred" appears 900 times
+    count += 900 * len("hundred")
+
+    # "and" appears once in all numbers between 100 and 999, except 100, 200, etc.
+    count += (900 - 9) * len("and")
+
+    # and finally, "one thousand" appears once
+    count += len("onethousand")
+
+    return count
