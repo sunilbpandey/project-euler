@@ -13,7 +13,7 @@ def solve() -> int:
     is_prime_cache: dict[int, bool] = {}
     max_n = 0
     product = 0
-    for a in range(-999, 1000):  # pylint: disable=invalid-name
+    for a in range(-999, 1000, 2):  # pylint: disable=invalid-name
         for b in takewhile(lambda p: p < 1000, primes):  # pylint: disable=invalid-name
             for n in range(0, b):  # pylint: disable=invalid-name
                 number = n * n + a * n + b

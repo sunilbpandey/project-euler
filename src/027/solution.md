@@ -11,4 +11,6 @@ If $n = b$, the formula yields $b^2 + ab + b$, which is clearly divisible by $b$
 
 If $n = 1$, the formula yields $1 + a + b$. For this to be a prime number, $a = 1 - b$ or $a$ must be odd.
 
+If $n = 3$ and $a = 1 - b$, the formula yields $12 - 2b$, which is negative for any $b \ge 7$. Since we are looking for $b > 41$, $a$ must be odd.
+
 Given the limits on $a$ and $b$ this formula cannot yield a number larger than 2,001,000. This is the largest number we need to test for primality. To do this efficiently, we can pre-compute prime numbers up to 1415.
