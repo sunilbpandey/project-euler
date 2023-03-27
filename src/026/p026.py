@@ -1,17 +1,11 @@
-from typing import List, Tuple
-
-
 def find_cycle_length(denominator: int) -> int:
     numerator = 1
-    seen: List[Tuple[int, int]] = []
+    seen: dict[int, int] = {}
     while numerator > 0:
-        while numerator < denominator:
-            numerator *= 10
-
-        quotient, numerator = numerator // denominator, numerator % denominator
-        if (quotient, numerator) in seen:
-            return len(seen) - seen.index((quotient, numerator))
-        seen.append((quotient, numerator))
+        numerator = (numerator * 10) % denominator
+        if numerator in seen:
+            return len(seen) - seen[numerator]
+        seen[numerator] = len(seen)
     return 0
 
 
