@@ -1,19 +1,25 @@
-from src.utils.py.prime import generate_primes, is_prime
+from itertools import takewhile
+from src.utils.py import prime
+
+
+def is_prime(num: int, primes: list[int], cache: dict[int, bool]) -> bool:
+    if num not in cache:
+        cache[num] = prime.is_prime(num, primes)
+    return cache[num]
 
 
 def solve() -> int:
-    primes = generate_primes(1415)
-    max_consecutive_primes = 0
+    primes = prime.generate_primes(1415)
+    is_prime_cache: dict[int, bool] = {}
+    max_n = 0
     product = 0
     for a in range(-999, 1000):  # pylint: disable=invalid-name
-        for b in range(3, 1000, 2):  # pylint: disable=invalid-name
-            count = 0
+        for b in takewhile(lambda p: p < 1000, primes):  # pylint: disable=invalid-name
             for n in range(0, b):  # pylint: disable=invalid-name
                 number = n * n + a * n + b
-                if number < 0 or not is_prime(number, primes):
+                if number < 0 or not is_prime(number, primes, is_prime_cache):
+                    if n > max_n:
+                        max_n = n
+                        product = a * b
                     break
-                count += 1
-            if count > max_consecutive_primes:
-                max_consecutive_primes = count
-                product = a * b
     return product
