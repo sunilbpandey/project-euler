@@ -9,11 +9,28 @@ def find_cycle_length(denominator: int) -> int:
     return 0
 
 
-def solve() -> int:
+def solve1() -> int:
     max_cycle = 0
     max_cycle_denominator = 0
     for denominator in range(2, 1000):
         cycle_length = find_cycle_length(denominator)
+        if cycle_length > max_cycle:
+            max_cycle = cycle_length
+            max_cycle_denominator = denominator
+    return max_cycle_denominator
+
+
+def solve() -> int:
+    max_cycle = 0
+    max_cycle_denominator = 0
+    for denominator in range(2, 1000):
+        if denominator % 2 == 0 or denominator % 5 == 0:
+            continue
+        cycle_length = 1
+        power = 10
+        while (power - 1) % denominator != 0:
+            power *= 10
+            cycle_length += 1
         if cycle_length > max_cycle:
             max_cycle = cycle_length
             max_cycle_denominator = denominator
