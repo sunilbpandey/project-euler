@@ -1,13 +1,34 @@
 coins = [1, 2, 5, 10, 20, 50, 100, 200]
 
 
-def count_ways(total: int, index: int) -> int:
-    if index <= 0:
-        return 1
+def solve1() -> int:
+    def count_ways(target: int, index: int) -> int:
+        if index <= 0:
+            return 1
 
-    limit = total // coins[index] + 1
-    return sum(count_ways(total - i * coins[index], index - 1) for i in range(limit))
+        limit = target // coins[index] + 1
+        return sum(
+            count_ways(target - i * coins[index], index - 1) for i in range(limit)
+        )
+
+    return count_ways(200, len(coins) - 1)
+
+
+def solve2() -> int:
+    def count_ways(target: int, index: int) -> int:
+        if target == 0:
+            return 1
+        if target < 0 or index < 0:
+            return 0
+        return count_ways(target - coins[index], index) + count_ways(target, index - 1)
+
+    return count_ways(200, len(coins) - 1)
 
 
 def solve() -> int:
-    return count_ways(200, len(coins) - 1)
+    amount = 200
+    ways = [1] + [0] * amount
+    for coin in coins:
+        for target in range(coin, amount + 1):
+            ways[target] += ways[target - coin]
+    return ways[amount]
