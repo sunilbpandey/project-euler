@@ -1,8 +1,7 @@
-from typing import Tuple
 import math
 
 
-def divide(num: int, divisor: int) -> Tuple[int, int]:
+def divide(num: int, divisor: int) -> tuple[int, int]:
     exponent = 0
     while num % divisor == 0:
         num //= divisor

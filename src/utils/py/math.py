@@ -1,4 +1,4 @@
-from typing import Generator
+from collections.abc import Generator
 import math
 from src.utils.py.prime import factorize
 

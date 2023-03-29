@@ -1,4 +1,4 @@
-from typing import Generator, List
+from collections.abc import Generator
 import math
 
 
@@ -50,7 +50,7 @@ def factorize_using_primes(num: int) -> dict[int, int]:
     return factors
 
 
-def factorize(num: int, primes: List[int] | None = None) -> dict[int, int]:
+def factorize(num: int, primes: list[int] | None = None) -> dict[int, int]:
     factors: dict[int, int] = {}
 
     def divide_by(divisor: int) -> None:
