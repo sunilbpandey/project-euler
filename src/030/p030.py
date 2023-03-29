@@ -1,6 +1,9 @@
 from itertools import combinations_with_replacement, product
 
 
+FIFTH_POWERS = [d**5 for d in range(10)]
+
+
 def solve1() -> int:
     total = 0
     # pylint: disable=invalid-name
@@ -17,7 +20,7 @@ def solve() -> int:
     total = 0
     for length in range(2, 7):
         for combo in combinations_with_replacement(range(10), length):
-            powersum = sum(d**5 for d in combo)
+            powersum = sum(FIFTH_POWERS[d] for d in combo)
             powersum_digits = sorted([int(d) for d in str(powersum)])
             combo_digits = sorted(combo)
             if powersum_digits == combo_digits:
