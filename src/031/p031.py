@@ -1,4 +1,4 @@
-coins = [1, 2, 5, 10, 20, 50, 100, 200]
+COINS = [1, 2, 5, 10, 20, 50, 100, 200]
 
 
 def solve1() -> int:
@@ -6,12 +6,12 @@ def solve1() -> int:
         if index <= 0:
             return 1
 
-        limit = target // coins[index] + 1
+        limit = target // COINS[index] + 1
         return sum(
-            count_ways(target - i * coins[index], index - 1) for i in range(limit)
+            count_ways(target - i * COINS[index], index - 1) for i in range(limit)
         )
 
-    return count_ways(200, len(coins) - 1)
+    return count_ways(200, len(COINS) - 1)
 
 
 def solve2() -> int:
@@ -20,15 +20,15 @@ def solve2() -> int:
             return 1
         if target < 0 or index < 0:
             return 0
-        return count_ways(target - coins[index], index) + count_ways(target, index - 1)
+        return count_ways(target - COINS[index], index) + count_ways(target, index - 1)
 
-    return count_ways(200, len(coins) - 1)
+    return count_ways(200, len(COINS) - 1)
 
 
 def solve() -> int:
     amount = 200
     ways = [1] + [0] * amount
-    for coin in coins:
+    for coin in COINS:
         for target in range(coin, amount + 1):
             ways[target] += ways[target - coin]
     return ways[amount]
