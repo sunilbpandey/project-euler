@@ -3,6 +3,9 @@ import math
 
 
 def is_prime(num: int, primes: list[int]) -> bool:
+    if num < 2:
+        return False
+
     limit = math.sqrt(num)
     for prime in primes:
         if prime > limit:
