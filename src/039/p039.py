@@ -1,6 +1,22 @@
 import math
 
 
+def solve1() -> int:
+    solutions = [0] * 1001
+    # pylint: disable=invalid-name
+    for p in range(2, 1001, 2):
+        for a in range(1, p // 2):
+            n = p**2
+            d = 2 * (p - a)
+            if n % d != 0:
+                continue
+            b = p + n // d
+            if b > a:
+                solutions[p] += 1
+    # pylint: enable=invalid-name
+    return solutions.index(max(solutions))
+
+
 def solve() -> int:
     solutions = [0] * 1001
     # pylint: disable=invalid-name
