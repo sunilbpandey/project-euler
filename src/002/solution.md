@@ -25,3 +25,83 @@ To generate the terms, observe that if the first two terms are `a` and `b`, the 
 ```
 
 So add `(a + b)` to the sum and set `a` and `b` to `(a + 2b)` and `(2a + 3b)`, respectively.
+
+## Calculation without keeping a running sum
+Source (my own post from 2006!): https://projecteuler.net/action=redirect;post_id=5411
+
+As we did above, let's assume the series starts with `a = 1` and `b = 1`. As we have already seen, only every third term is even.
+
+Consider the sum of all even terms from $F_1$ to $F_n$, where $n$ is a multiple of 3.
+
+We know,
+
+$$
+F_1 = 1, F_2 = 1, F_3 = 2
+$$
+
+Therefore, for $n = 3$,
+
+$$
+\text{SumOfEvenTerms}(3) = F_3 = \frac{F_1 + F_2 + F_3}{2} = \frac{\sum_{i=1}^{3}{F_i}}{2}
+$$
+
+Let,
+
+$$
+\text{SumOfEvenTerms}(n) = \frac{\sum_{i=1}^{n}{F_i}}{2}
+$$
+
+where $n$ is a multiple of 3.
+
+Take the next multiple of 3,
+
+$$
+\text{SumOfEvenTerms}(n + 3) = \frac{\sum_{i=1}^{n}{F_i}}{2} + F_{n + 3} = \frac{\sum_{i=1}^{n}{F_i}}{2} + \frac{F_{n + 1} + F_{n + 2} + F_{n + 3}}{2} = \frac{\sum_{i=1}^{n + 3}{F_i}}{2}
+$$
+
+Therefore, we prove by induction that,
+
+$$
+\text{SumOfEvenTerms}(n) = \frac{\sum_{i=1}^{n}{F_i}}{2}
+$$
+
+where $n$ is a multiple of 3.
+
+Now, consider the sum of all terms from $F_1$ to $F_n$.
+
+$$
+\sum_{i=1}^{1}{F_i} = F_1 = 1 = F_3 - 1
+$$
+
+Let,
+
+$$
+\sum_{i=1}^{n}{F_i} = F_{n + 2} - 1
+$$
+
+Consider,
+
+$$
+\sum_{i=1}^{n + 1}{F_i} = F_{n + 1} + F_{n + 2} - 1 = F_{n + 3} - 1
+$$
+
+Therefore, by induction we prove that,
+
+$$
+\sum_{i=1}^{n}{F_i} = F_{n + 2} - 1
+$$
+
+Finally, if $n$ is even, that means it is divisible by 3. If $n - 1$ is even, that means $n - 1$ is divisible by 3. If both are odd, that means $n - 2$ is even, and therefore divisible by 3.
+
+Combining all of that, we can see that for any $n$,
+
+$$
+\text{SumOfEvenTerms}(n - 1) =
+\begin{cases}
+\frac{F_{n - 1} - 1}{2} & \quad \text{if } F_n \text{ is even}\\
+\frac{F_{n - 1} + F_n - 1}{2} & \quad \text{if } F_{n - 1} \text{ is even}\\
+\frac{F_n - 1}{2} & \quad \text{if both } F_n \text{ and } F_{n - 1} \text{ are odd}
+\end{cases}
+$$
+
+So we just need to generate the terms, keeping track of $F_{n - 1}$ and $F_n$, until $F_n$ goes beyond four million. At that point we can calculate the answer using just these two terms.
