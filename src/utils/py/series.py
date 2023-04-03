@@ -16,3 +16,12 @@ def triangle_numbers() -> Generator[int, None, None]:
         triangle += n
         yield triangle
         n += 1
+
+
+def pentagonal_numbers() -> Generator[int, None, None]:
+    difference = 1
+    pentagonal = 0
+    while True:
+        pentagonal += difference
+        yield pentagonal
+        difference += 3
