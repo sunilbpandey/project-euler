@@ -62,7 +62,8 @@ def factorize(num: int, primes: list[int] | None = None) -> dict[int, int]:
         while num % divisor == 0:
             power += 1
             num //= divisor
-        factors[divisor] = power
+        if power > 0:
+            factors[divisor] = power
 
     limit = math.floor(math.sqrt(num))
 
