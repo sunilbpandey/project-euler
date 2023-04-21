@@ -7,6 +7,28 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 
 ## Usage
 
+### Python
+
+#### [Optional] Create and activate a virtual environment
+
+```
+mkdir .venv
+python3 -m venv .venv/euler
+source .venv/euler/activate
+```
+
+#### Install dependencies
+
+```
+pip install -r pip_requirements.txt
+```
+
+#### Run all tests
+
+```
+pytest -v
+```
+
 ### TypeScript
 
 #### Install dependencies
