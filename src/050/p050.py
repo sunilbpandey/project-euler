@@ -2,7 +2,7 @@ from src.utils.py.prime import generate_primes, is_prime
 
 
 def solve() -> int:
-    # By inspection, sum of prime numbers below 4000 more than one million
+    # By inspection, sum of prime numbers below 4000 is more than one million
     primes = generate_primes(4000)
 
     max_term_count = 0
