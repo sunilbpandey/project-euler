@@ -57,3 +57,8 @@ $$
 Combining all that, if ${n \choose r}$ is greater than 1000000 for some $r = m$, it will be greater than 1000000 for all values of $r$ from $m$ to $n - m$. For this $n$, there will be $n - 2m + 1$ such values of $r$.
 
 So, for each $n$, we just need to find the first value of $r$ such that ${n \choose r} > 1000000$.
+
+## Using Pascal's Triangle
+It is also possible to solve this problem without any factorial calculation, by building Pascal's Triangle, known to ancient Indian mathematicians as Meru Prastaara, "the staircase of Mount Meru".
+
+For every value of $n$, starting with $n = 0$, build the corresponding row of Pascal's triangle, until the value is greater than one million. Based on our previous analysis, once a value in the row exceeds one million, we know exactly how many values in that row will exceed one million and we don't need to compute them.
