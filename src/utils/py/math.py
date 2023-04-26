@@ -35,3 +35,7 @@ def gcd(a: int, b: int) -> int:  # pylint: disable=invalid-name
 
 def lcm(a: int, b: int) -> int:  # pylint: disable=invalid-name
     return a * (b // gcd(a, b))
+
+
+def is_palindrome(num: int) -> bool:
+    return str(num) == str(num)[::-1]
