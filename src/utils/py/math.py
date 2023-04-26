@@ -39,3 +39,7 @@ def lcm(a: int, b: int) -> int:  # pylint: disable=invalid-name
 
 def is_palindrome(num: int) -> bool:
     return str(num) == str(num)[::-1]
+
+
+def digit_sum(number: int) -> int:
+    return sum(int(digit) for digit in str(number))
