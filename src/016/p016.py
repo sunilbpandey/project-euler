@@ -1,2 +1,5 @@
+from src.utils.py.math import digit_sum
+
+
 def solve() -> int:
-    return sum(int(digit) for digit in str(2**1000))
+    return digit_sum(2**1000)

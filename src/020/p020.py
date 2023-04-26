@@ -1,5 +1,6 @@
 from math import factorial
+from src.utils.py.math import digit_sum
 
 
 def solve() -> int:
-    return sum(int(digit) for digit in str(factorial(100)))
+    return digit_sum(factorial(100))
