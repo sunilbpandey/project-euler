@@ -1,9 +1,6 @@
 from collections.abc import Generator
 import itertools
-
-
-def is_palindrome(number: int) -> bool:
-    return str(number) == str(number)[::-1]
+from src.utils.py.math import is_palindrome
 
 
 def parse_binary(bits: list[int]) -> int:
