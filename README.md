@@ -5,56 +5,6 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 ![TypeScript](https://github.com/sunilbpandey/project-euler/actions/workflows/typescript.yml/badge.svg)
 ![Python](https://github.com/sunilbpandey/project-euler/actions/workflows/python.yml/badge.svg)
 
-## Usage
-
-### Python
-
-#### [Optional] Create and activate a virtual environment
-
-```
-mkdir .venv
-python3 -m venv .venv/euler
-source .venv/euler/activate
-```
-
-#### Install dependencies
-
-```
-pip install -r pip_requirements.txt
-```
-
-#### Run all tests
-
-```
-pytest -v
-```
-
-### TypeScript
-
-#### Install dependencies
-
-```
-npm install
-```
-
-#### Solve a specific problem
-
-```
-npm start --silent <PROBLEM>
-```
-
-e.g.
-
-```
-npm start --silent 12
-```
-
-#### Run all tests
-
-```
-npm test
-```
-
 ## Progress
 
 |                | Python | TypeScript |
@@ -116,3 +66,53 @@ npm test
 | [055](src/055) | ✓      |            |
 | [056](src/056) | ✓      |            |
 | [057](src/057) | ✓      |            |
+
+## Usage
+
+### Python
+
+#### [Optional] Create and activate a virtual environment
+
+```
+mkdir .venv
+python3 -m venv .venv/euler
+source .venv/euler/activate
+```
+
+#### Install dependencies
+
+```
+pip install -r pip_requirements.txt
+```
+
+#### Run all tests
+
+```
+pytest -v
+```
+
+### TypeScript
+
+#### Install dependencies
+
+```
+npm install
+```
+
+#### Solve a specific problem
+
+```
+npm start --silent <PROBLEM>
+```
+
+e.g.
+
+```
+npm start --silent 12
+```
+
+#### Run all tests
+
+```
+npm test
+```
