@@ -71,6 +71,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [060](src/060) | ✓      |            |
 | [061](src/061) | ✓      |            |
 | [062](src/062) | ✓      |            |
+| [063](src/063) | ✓      |            |
 
 ## Usage
 
