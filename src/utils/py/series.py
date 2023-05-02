@@ -9,19 +9,34 @@ def fibonacci(
         a, b = b, a + b
 
 
-def triangle_numbers() -> Generator[int, None, None]:
-    n = 1
-    triangle = 0
+def figurate_numbers(step: int) -> Generator[int, None, None]:
+    difference = 1
+    number = 0
     while True:
-        triangle += n
-        yield triangle
-        n += 1
+        number += difference
+        yield number
+        difference += step
+
+
+def triangle_numbers() -> Generator[int, None, None]:
+    return figurate_numbers(1)
+
+
+def square_numbers() -> Generator[int, None, None]:
+    return figurate_numbers(2)
 
 
 def pentagonal_numbers() -> Generator[int, None, None]:
-    difference = 1
-    pentagonal = 0
-    while True:
-        pentagonal += difference
-        yield pentagonal
-        difference += 3
+    return figurate_numbers(3)
+
+
+def hexagonal_numbers() -> Generator[int, None, None]:
+    return figurate_numbers(4)
+
+
+def hepagonal_numbers() -> Generator[int, None, None]:
+    return figurate_numbers(5)
+
+
+def octagonal_numbers() -> Generator[int, None, None]:
+    return figurate_numbers(6)
