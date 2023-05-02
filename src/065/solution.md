@@ -17,3 +17,24 @@ To find the kth term, start with $\frac{3}{2k}$ if k is divisible by 3, or 1 if 
 1. Take the reciprocal of the fraction
 
 Finally, add 2 and simplify the fraction.
+
+## Using the formula for numerator
+Consider the continued fraction $[a_1; a_2, a_3, \dots]$
+
+The first convergent is $a_1$.
+
+The second convergent is $a_1 + \frac{1}{a_2} = \frac{a_1a_2 + 1}{a_2}$
+
+The third convergent is $a_1 + \frac{1}{a_2 + \frac{1}{a_3}} = \frac{a_1a_2a_3 + a_1 + a_3}{a_2a_3 + 1} = \frac{a_3(a_1a_2 + 1) + a_1}{a_2a_3 + 1}$
+
+The fourth convergent is $a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \frac{1}{a_4}}} = \frac{a_1a_2a_3a_4 + a_1a_2 + a_1a_4 + a_3a_4 + 1}{a_2a_3a_4 + a_2 + a_4} = \frac{a_4(a_1a_2a_3 + a_1 + a_3) + a_1a_2 + 1}{a_2a_3a_4 + a_2 + a_4}$
+
+The numerator of the kth convergent, where k > 2, can be found using this simple formula:
+
+$N_k = a_k \times N_{k - 1} + N_{k - 2}$
+
+In case of $e$, the continued fraction representation is:
+
+$e = [2; 1, 2, 1, 1, 4, 1, 1, 6, \dots, 1, 2k, 1, \dots]$
+
+We can see that, if k is divisible by 3, $a_k = \frac{2k}{3}$, otherwise $a_k = 1$.
