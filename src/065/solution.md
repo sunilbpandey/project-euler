@@ -29,9 +29,13 @@ The third convergent is $a_1 + \frac{1}{a_2 + \frac{1}{a_3}} = \frac{a_1a_2a_3 +
 
 The fourth convergent is $a_1 + \frac{1}{a_2 + \frac{1}{a_3 + \frac{1}{a_4}}} = \frac{a_1a_2a_3a_4 + a_1a_2 + a_1a_4 + a_3a_4 + 1}{a_2a_3a_4 + a_2 + a_4} = \frac{a_4(a_1a_2a_3 + a_1 + a_3) + a_1a_2 + 1}{a_2a_3a_4 + a_2 + a_4}$
 
-The numerator of the kth convergent, where k > 2, can be found using this simple formula:
+The numerator of the ith convergent, where i > 2, can be found using this simple formula:
 
-$N_k = a_k \times N_{k - 1} + N_{k - 2}$
+$h_i = a_i \times h_{i - 1} + h_{i - 2}$
+
+Although not needed for this problem, the denominator can be found using a similar formula:
+
+$k_i = a_i \times k_{i - 1} + k_{i - 2}$
 
 In case of $e$, the continued fraction representation is:
 
