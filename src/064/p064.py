@@ -1,9 +1,5 @@
 import math
-
-
-def is_perfect_square(number: int) -> bool:
-    root = int(math.floor(math.sqrt(number)))
-    return number == root**2
+from src.utils.py.series import is_perfect_square
 
 
 # pylint: disable=invalid-name
