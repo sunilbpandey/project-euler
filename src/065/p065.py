@@ -1,4 +1,6 @@
+import itertools
 import math
+from src.utils.py.series import convergents, e_continued_fraction
 
 
 def solve1() -> int:
@@ -23,10 +25,5 @@ def solve1() -> int:
 
 
 def solve() -> int:
-    num1, num2 = 2, 3
-    # pylint: disable=invalid-name
-    for k in range(3, 101):
-        a = 2 * (k // 3) if k % 3 == 0 else 1
-        num1, num2 = num2, a * num2 + num1
-    # pylint: enable=invalid-name
-    return sum(int(digit) for digit in str(num2))
+    numerator, _ = next(itertools.islice(convergents(e_continued_fraction()), 99, None))
+    return sum(int(digit) for digit in str(numerator))

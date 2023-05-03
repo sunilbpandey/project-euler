@@ -1,4 +1,5 @@
-from collections.abc import Generator
+from collections.abc import Generator, Iterable
+import itertools
 
 
 def fibonacci(
@@ -40,3 +41,24 @@ def hepagonal_numbers() -> Generator[int, None, None]:
 
 def octagonal_numbers() -> Generator[int, None, None]:
     return figurate_numbers(6)
+
+
+def e_continued_fraction() -> Generator[int, None, None]:
+    yield 2
+    for k in itertools.count(1):
+        yield 1
+        yield 2 * k
+        yield 1
+
+
+def convergents(
+    continued_fraction: Iterable[int],
+) -> Generator[tuple[int, int], None, None]:
+    h0, h1 = 0, 1
+    k0, k1 = 1, 0
+    for a in continued_fraction:
+        h = a * h1 + h0
+        k = a * k1 + k0
+        yield (h, k)
+        h0, h1 = h1, h
+        k0, k1 = k1, k
