@@ -67,6 +67,7 @@ SOLUTIONS = [
     {"problem": 63, "solution": "49"},
     {"problem": 64, "solution": "1322"},
     {"problem": 65, "solution": "272"},
+    {"problem": 66, "solution": "661"},
 ]
 
 
