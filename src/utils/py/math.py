@@ -43,3 +43,10 @@ def is_palindrome(num: int) -> bool:
 
 def digit_sum(number: int) -> int:
     return sum(int(digit) for digit in str(number))
+
+
+def totient(num: int, primes: list[int]) -> int:
+    factors = factorize(num, primes)
+    for factor in factors:
+        num = (num * (factor - 1)) // factor
+    return int(num)
