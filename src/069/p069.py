@@ -1,11 +1,5 @@
-from src.utils.py.prime import generate_primes, factorize
-
-
-def totient(num: int, primes: list[int]) -> int:
-    factors = factorize(num, primes)
-    for factor in factors:
-        num = (num * (factor - 1)) // factor
-    return int(num)
+from src.utils.py.prime import generate_primes
+from src.utils.py.math import totient
 
 
 def solve1() -> int:
