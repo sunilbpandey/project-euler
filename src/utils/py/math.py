@@ -47,6 +47,6 @@ def digit_sum(number: int) -> int:
 
 def totient(num: int, primes: list[int]) -> int:
     factors = factorize(num, primes)
-    for factor in factors:
-        num = (num * (factor - 1)) // factor
+    for prime in factors:
+        num = (num * (prime - 1)) // prime
     return int(num)
