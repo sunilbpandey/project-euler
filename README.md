@@ -82,6 +82,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [071](src/071) | ✓      |            |
 | [072](src/072) | ✓      |            |
 | [073](src/073) | ✓      |            |
+| [074](src/074) | ✓      |            |
 
 ## Usage
 
