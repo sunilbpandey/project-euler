@@ -37,7 +37,7 @@ Finally, since $a + b > c$, otherwise the sides won't form a triangle, and $a + 
 Now we can go through all values of $p$ and count the number of values of $a$ which produce a valid $b$.
 
 ## Use Euclid's formula
-We can also nuse [Euclid's formula](https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple), which states that a Pythagorean triple is formed by integers:
+We can also use [Euclid's formula](https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple), which states that a Pythagorean triple is formed by integers:
 
 $a = m^2 - n^2,\ b = 2mn,\ c = m^2 + n^2$
 
