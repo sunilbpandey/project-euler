@@ -91,7 +91,7 @@ $$
 \sum_{i=1}^{n}{F_i} = F_{n + 2} - 1
 $$
 
-Finally, if $n$ is even, that means it is divisible by 3. If $n - 1$ is even, that means $n - 1$ is divisible by 3. If both are odd, that means $n - 2$ is even, and therefore divisible by 3.
+Finally, if $F_n$ is even, that means $n$ is divisible by 3. If $F_{n - 1}$ is even, that means $n - 1$ is divisible by 3. If both are odd, that means $F_{n - 2}$ is even, and therefore $n - 2$ is divisible by 3.
 
 Combining all of that, we can see that for any $n$,
 

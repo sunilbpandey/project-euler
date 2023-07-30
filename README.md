@@ -10,7 +10,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 |                | Go | Python | TypeScript |
 | -------------- | -- | ------ | ---------- |
 | [001](src/001) | ✓  | ✓      | ✓          |
-| [002](src/002) |    | ✓      | ✓          |
+| [002](src/002) | ✓  | ✓      | ✓          |
 | [003](src/003) |    | ✓      | ✓          |
 | [004](src/004) |    | ✓      | ✓          |
 | [005](src/005) |    | ✓      | ✓          |
