@@ -8,6 +8,7 @@ import (
 
 	"github.com/sunilbpandey/project-euler/src/001"
 	"github.com/sunilbpandey/project-euler/src/002"
+	"github.com/sunilbpandey/project-euler/src/003"
 )
 
 type Record struct {
@@ -40,6 +41,7 @@ type ProblemFunc func() string
 var problemFuncs = map[int]ProblemFunc{
 	1: problem001.Solve,
 	2: problem002.Solve,
+	3: problem003.Solve,
 }
 
 func TestProblems(t *testing.T) {
