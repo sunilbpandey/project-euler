@@ -1,8 +1,6 @@
 package problem004
 
-import (
-	"strconv"
-)
+import "strconv"
 
 func Solve() string {
 	largestPalindrome := 0
