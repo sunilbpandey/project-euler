@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"testing"
+
+	"github.com/sunilbpandey/project-euler/src/utils/go"
 )
 
 type Record struct {
@@ -14,16 +16,12 @@ type Record struct {
 
 func ReadAnswers() map[int]string {
 	file, err := os.Open("../answers.json")
-	if err != nil {
-		panic(err)
-	}
+	errorutils.Check(err)
 	defer file.Close()
 
 	var records []Record
 	err = json.NewDecoder(file).Decode(&records)
-	if err != nil {
-		panic(err)
-	}
+	errorutils.Check(err)
 
 	var answers = make(map[int]string)
 	for _, record := range records {
