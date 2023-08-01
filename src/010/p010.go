@@ -1,23 +1,13 @@
 package problem010
 
-import "strconv"
+import (
+	"strconv"
 
-func GeneratePrimes(limit int) []int {
-	primes := []int{2}
-	sieve := make([]bool, limit)
-	for n := 3; n < limit; n += 2 {
-		if !sieve[n] {
-			primes = append(primes, n)
-			for m := n * n; m < limit; m += n {
-				sieve[m] = true
-			}
-		}
-	}
-	return primes
-}
+	"github.com/sunilbpandey/project-euler/src/utils/go/primeutils"
+)
 
 func Solve() string {
-	primes := GeneratePrimes(2000000)
+	primes := primeutils.GeneratePrimes(2000000)
 	primeSum := 0
 	for _, p := range primes {
 		primeSum += p

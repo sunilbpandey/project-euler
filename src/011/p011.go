@@ -3,21 +3,9 @@ package problem011
 import (
 	"strconv"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go/errorutils"
+	"github.com/sunilbpandey/project-euler/src/utils/go/intmath"
+	"github.com/sunilbpandey/project-euler/src/utils/go/strutils"
 )
-
-func Atoi(s string) int {
-	n, err := strconv.Atoi(s)
-	errorutils.Check(err)
-	return n
-}
-
-func IntMax(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
-}
 
 func Solve() string {
 	input := `08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
@@ -45,7 +33,7 @@ func Solve() string {
 	for i := 0; i < 20; i++ {
 		grid[i] = make([]int, 20)
 		for j := 0; j < 20; j++ {
-			grid[i][j] = Atoi(input[3*(20*i+j) : 3*(20*i+j)+2])
+			grid[i][j] = strutils.Atoi(input[3*(20*i+j) : 3*(20*i+j)+2])
 		}
 	}
 
@@ -54,22 +42,22 @@ func Solve() string {
 		for j := 0; j < 20; j++ {
 			if j < 17 {
 				product := grid[i][j] * grid[i][j+1] * grid[i][j+2] * grid[i][j+3]
-				maxProduct = IntMax(maxProduct, product)
+				maxProduct = intmath.Max(maxProduct, product)
 			}
 
 			if i < 17 {
 				product := grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]
-				maxProduct = IntMax(maxProduct, product)
+				maxProduct = intmath.Max(maxProduct, product)
 			}
 
 			if i < 17 && j < 17 {
 				product := grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] * grid[i+3][j+3]
-				maxProduct = IntMax(maxProduct, product)
+				maxProduct = intmath.Max(maxProduct, product)
 			}
 
 			if i < 17 && j > 2 {
 				product := grid[i][j] * grid[i+1][j-1] * grid[i+2][j-2] * grid[i+3][j-3]
-				maxProduct = IntMax(maxProduct, product)
+				maxProduct = intmath.Max(maxProduct, product)
 			}
 		}
 	}

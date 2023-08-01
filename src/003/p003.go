@@ -1,8 +1,9 @@
 package problem003
 
 import (
-	"math"
 	"strconv"
+
+	"github.com/sunilbpandey/project-euler/src/utils/go/intmath"
 )
 
 func divide(number int, divisor int) int {
@@ -21,7 +22,7 @@ func Solve() string {
 		n = divide(n, 2)
 	}
 
-	sqrt := int(math.Sqrt(float64(n)))
+	sqrt := intmath.Sqrt(n)
 	for d := 3; d <= sqrt; d += 2 {
 		if n%d == 0 {
 			largestFactor = d
