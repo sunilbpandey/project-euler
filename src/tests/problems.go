@@ -10,18 +10,20 @@ import (
 	"github.com/sunilbpandey/project-euler/src/007"
 	"github.com/sunilbpandey/project-euler/src/008"
 	"github.com/sunilbpandey/project-euler/src/009"
+	"github.com/sunilbpandey/project-euler/src/010"
 )
 
 type ProblemFunc func() string
 
 var problemFuncs = map[int]ProblemFunc{
-	1: problem001.Solve,
-	2: problem002.Solve,
-	3: problem003.Solve,
-	4: problem004.Solve,
-	5: problem005.Solve,
-	6: problem006.Solve,
-	7: problem007.Solve,
-	8: problem008.Solve,
-	9: problem009.Solve,
+	1:  problem001.Solve,
+	2:  problem002.Solve,
+	3:  problem003.Solve,
+	4:  problem004.Solve,
+	5:  problem005.Solve,
+	6:  problem006.Solve,
+	7:  problem007.Solve,
+	8:  problem008.Solve,
+	9:  problem009.Solve,
+	10: problem010.Solve,
 }

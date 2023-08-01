@@ -19,7 +19,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [007](src/007) | ✓  | ✓      | ✓          |
 | [008](src/008) | ✓  | ✓      | ✓          |
 | [009](src/009) | ✓  | ✓      | ✓          |
-| [010](src/010) |    | ✓      | ✓          |
+| [010](src/010) | ✓  | ✓      | ✓          |
 | [011](src/011) |    | ✓      | ✓          |
 | [012](src/012) |    | ✓      | ✓          |
 | [013](src/013) |    | ✓      | ✓          |
