@@ -3,7 +3,7 @@ package problem011
 import (
 	"strconv"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go"
+	"github.com/sunilbpandey/project-euler/src/utils/go/errorutils"
 )
 
 func Atoi(s string) int {

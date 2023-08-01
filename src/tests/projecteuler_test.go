@@ -6,7 +6,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go"
+	"github.com/sunilbpandey/project-euler/src/utils/go/errorutils"
 )
 
 type Record struct {
