@@ -143,7 +143,6 @@ def classify(cards: list[Card]) -> tuple[Rank, list[int]]:
 def compare_hands(hand1: list[Card], hand2: list[Card]) -> int:
     (rank1, values1) = classify(hand1)
     (rank2, values2) = classify(hand2)
-    print(f"{[(card.suit, card.value) for card in hand1]}: {rank1} {values1}")
 
     if rank1.value > rank2.value:
         # player 1 has higher ranked hand

@@ -32,6 +32,3 @@ def solve() -> int:
     )
     largest_product = max(substring_prod(i) for i in range(0, len(input_string) - 13))
     return largest_product
-
-
-print(solve())
