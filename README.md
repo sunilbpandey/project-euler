@@ -21,7 +21,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [009](src/009) | ✓  | ✓      | ✓          |
 | [010](src/010) | ✓  | ✓      | ✓          |
 | [011](src/011) | ✓  | ✓      | ✓          |
-| [012](src/012) |    | ✓      | ✓          |
+| [012](src/012) | ✓  | ✓      | ✓          |
 | [013](src/013) |    | ✓      | ✓          |
 | [014](src/014) |    | ✓      | ✓          |
 | [015](src/015) |    | ✓      | ✓          |
