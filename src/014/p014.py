@@ -5,7 +5,7 @@ def solve() -> int:
     max_chain_length = 0
     max_chain_length_start = 0
 
-    for start in range(500000, 1000000):
+    for start in range(2, 1000000):
         chain_length = 0
         num = start
         while True:
