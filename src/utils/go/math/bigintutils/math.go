@@ -1,4 +1,4 @@
-package bigintmath
+package bigintutils
 
 import "math/big"
 

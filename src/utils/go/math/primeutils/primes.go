@@ -1,6 +1,6 @@
 package primeutils
 
-import "github.com/sunilbpandey/project-euler/src/utils/go/intmath"
+import "github.com/sunilbpandey/project-euler/src/utils/go/math/intutils"
 
 func CountOfDivisors(n int, primes []int) int {
 	factors := Factorize(n, primes)
@@ -12,7 +12,7 @@ func CountOfDivisors(n int, primes []int) int {
 }
 
 func Factorize(n int, primes []int) map[int]int {
-	limit := intmath.Sqrt(n)
+	limit := intutils.Sqrt(n)
 	factors := make(map[int]int)
 	for _, p := range primes {
 		if n == 1 || p > limit {

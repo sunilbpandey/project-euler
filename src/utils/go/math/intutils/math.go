@@ -1,4 +1,4 @@
-package intmath
+package intutils
 
 import "math"
 

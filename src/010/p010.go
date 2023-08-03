@@ -3,7 +3,7 @@ package problem010
 import (
 	"strconv"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go/primeutils"
+	"github.com/sunilbpandey/project-euler/src/utils/go/math/primeutils"
 )
 
 func Solve() string {
