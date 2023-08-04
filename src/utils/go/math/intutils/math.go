@@ -31,3 +31,20 @@ func Pow(x int, y int) int {
 func Sqrt(n int) int {
 	return int(math.Sqrt(float64(n)))
 }
+
+func SumOfDivisors(n int) int {
+	sum := 0
+	for d := 1; d < Sqrt(n)+1; d++ {
+		if n%d == 0 {
+			sum += d
+			if n/d != d {
+				sum += n / d
+			}
+		}
+	}
+	return sum
+}
+
+func SumOfProperDivisors(n int) int {
+	return SumOfDivisors(n) - n
+}
