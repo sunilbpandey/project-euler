@@ -32,7 +32,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [020](src/020) | ✓  | ✓      | ✓          |
 | [021](src/021) | ✓  | ✓      | ✓          |
 | [022](src/022) | ✓  | ✓      | ✓          |
-| [023](src/023) |    | ✓      | ✓          |
+| [023](src/023) | ✓  | ✓      | ✓          |
 | [024](src/024) |    | ✓      | ✓          |
 | [025](src/025) |    | ✓      | ✓          |
 | [026](src/026) |    | ✓      |            |
