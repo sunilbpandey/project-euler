@@ -2,6 +2,14 @@ package intutils
 
 import "math"
 
+func Factorial(n int) int {
+	factorial := 1
+	for m := 2; m <= n; m++ {
+		factorial *= m
+	}
+	return factorial
+}
+
 func Gcd(a int, b int) int {
 	for a != b {
 		if a > b {
