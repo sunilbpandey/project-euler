@@ -49,3 +49,21 @@ func GeneratePrimes(limit int) []int {
 	}
 	return primes
 }
+
+func IsPrime(n int, primes []int) bool {
+	if n < 2 {
+		return false
+	}
+
+	limit := intutils.Sqrt(n)
+	for _, p := range primes {
+		if p > limit {
+			break
+		}
+
+		if n%p == 0 {
+			return false
+		}
+	}
+	return true
+}

@@ -102,5 +102,9 @@
     {
         "problem": 26,
         "answer": "983"
+    },
+    {
+        "problem": 27,
+        "answer": "-59231"
     }
 ]
