@@ -19,3 +19,26 @@ Combining these two, we get that:
 
 * We only need to check numbers that coprime to 2 and 5, and
 * For those numbers, we can find the period by calculating powers of 10 until we find the appropriate k.
+
+## Avoiding large numbers
+$10^k$ can quickly exceed the limit of 64-bit unsigned integers. If the programming language doesn't support arbitrarily large integers, this can require special handling. But we can avoid that by using modular arithmetic.
+
+Say,
+
+$$
+10^k \equiv n \mod d
+$$
+
+This means,
+
+$$
+10^k = md + n
+$$
+
+Multiply both sides by 10,
+
+$$
+10^{k + 1} = 10md + 10n \equiv 10n \mod d
+$$
+
+Since we are only interested in knowing when the remainder is 1, this means that instead of keeping track of $10^k$, it's enough to keep track of $10^k \mod d$, which should comfortably fit in a 32-bit integer.

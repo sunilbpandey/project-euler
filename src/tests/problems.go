@@ -1,31 +1,32 @@
 package projecteuler_test
 
 import (
-	"github.com/sunilbpandey/project-euler/src/001"
-	"github.com/sunilbpandey/project-euler/src/002"
-	"github.com/sunilbpandey/project-euler/src/003"
-	"github.com/sunilbpandey/project-euler/src/004"
-	"github.com/sunilbpandey/project-euler/src/005"
-	"github.com/sunilbpandey/project-euler/src/006"
-	"github.com/sunilbpandey/project-euler/src/007"
-	"github.com/sunilbpandey/project-euler/src/008"
-	"github.com/sunilbpandey/project-euler/src/009"
-	"github.com/sunilbpandey/project-euler/src/010"
-	"github.com/sunilbpandey/project-euler/src/011"
-	"github.com/sunilbpandey/project-euler/src/012"
-	"github.com/sunilbpandey/project-euler/src/013"
-	"github.com/sunilbpandey/project-euler/src/014"
-	"github.com/sunilbpandey/project-euler/src/015"
-	"github.com/sunilbpandey/project-euler/src/016"
-	"github.com/sunilbpandey/project-euler/src/017"
-	"github.com/sunilbpandey/project-euler/src/018"
-	"github.com/sunilbpandey/project-euler/src/019"
-	"github.com/sunilbpandey/project-euler/src/020"
-	"github.com/sunilbpandey/project-euler/src/021"
-	"github.com/sunilbpandey/project-euler/src/022"
-	"github.com/sunilbpandey/project-euler/src/023"
-	"github.com/sunilbpandey/project-euler/src/024"
-	"github.com/sunilbpandey/project-euler/src/025"
+	problem001 "github.com/sunilbpandey/project-euler/src/001"
+	problem002 "github.com/sunilbpandey/project-euler/src/002"
+	problem003 "github.com/sunilbpandey/project-euler/src/003"
+	problem004 "github.com/sunilbpandey/project-euler/src/004"
+	problem005 "github.com/sunilbpandey/project-euler/src/005"
+	problem006 "github.com/sunilbpandey/project-euler/src/006"
+	problem007 "github.com/sunilbpandey/project-euler/src/007"
+	problem008 "github.com/sunilbpandey/project-euler/src/008"
+	problem009 "github.com/sunilbpandey/project-euler/src/009"
+	problem010 "github.com/sunilbpandey/project-euler/src/010"
+	problem011 "github.com/sunilbpandey/project-euler/src/011"
+	problem012 "github.com/sunilbpandey/project-euler/src/012"
+	problem013 "github.com/sunilbpandey/project-euler/src/013"
+	problem014 "github.com/sunilbpandey/project-euler/src/014"
+	problem015 "github.com/sunilbpandey/project-euler/src/015"
+	problem016 "github.com/sunilbpandey/project-euler/src/016"
+	problem017 "github.com/sunilbpandey/project-euler/src/017"
+	problem018 "github.com/sunilbpandey/project-euler/src/018"
+	problem019 "github.com/sunilbpandey/project-euler/src/019"
+	problem020 "github.com/sunilbpandey/project-euler/src/020"
+	problem021 "github.com/sunilbpandey/project-euler/src/021"
+	problem022 "github.com/sunilbpandey/project-euler/src/022"
+	problem023 "github.com/sunilbpandey/project-euler/src/023"
+	problem024 "github.com/sunilbpandey/project-euler/src/024"
+	problem025 "github.com/sunilbpandey/project-euler/src/025"
+	problem026 "github.com/sunilbpandey/project-euler/src/026"
 )
 
 type ProblemFunc func() string
@@ -56,4 +57,5 @@ var problemFuncs = map[int]ProblemFunc{
 	23: problem023.Solve,
 	24: problem024.Solve,
 	25: problem025.Solve,
+	26: problem026.Solve,
 }
