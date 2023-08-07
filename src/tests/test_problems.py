@@ -1,95 +1,22 @@
 import importlib
+import json
+import os.path
 import pytest
 
-SOLUTIONS = [
-    {"problem": 1, "solution": "233168"},
-    {"problem": 2, "solution": "4613732"},
-    {"problem": 3, "solution": "6857"},
-    {"problem": 4, "solution": "906609"},
-    {"problem": 5, "solution": "232792560"},
-    {"problem": 6, "solution": "25164150"},
-    {"problem": 7, "solution": "104743"},
-    {"problem": 8, "solution": "23514624000"},
-    {"problem": 9, "solution": "31875000"},
-    {"problem": 10, "solution": "142913828922"},
-    {"problem": 11, "solution": "70600674"},
-    {"problem": 12, "solution": "76576500"},
-    {"problem": 13, "solution": "5537376230"},
-    {"problem": 14, "solution": "837799"},
-    {"problem": 15, "solution": "137846528820"},
-    {"problem": 16, "solution": "1366"},
-    {"problem": 17, "solution": "21124"},
-    {"problem": 18, "solution": "1074"},
-    {"problem": 19, "solution": "171"},
-    {"problem": 20, "solution": "648"},
-    {"problem": 21, "solution": "31626"},
-    {"problem": 22, "solution": "871198282"},
-    {"problem": 23, "solution": "4179871"},
-    {"problem": 24, "solution": "2783915460"},
-    {"problem": 25, "solution": "4782"},
-    {"problem": 26, "solution": "983"},
-    {"problem": 27, "solution": "-59231"},
-    {"problem": 28, "solution": "669171001"},
-    {"problem": 29, "solution": "9183"},
-    {"problem": 30, "solution": "443839"},
-    {"problem": 31, "solution": "73682"},
-    {"problem": 32, "solution": "45228"},
-    {"problem": 33, "solution": "100"},
-    {"problem": 34, "solution": "40730"},
-    {"problem": 35, "solution": "55"},
-    {"problem": 36, "solution": "872187"},
-    {"problem": 37, "solution": "748317"},
-    {"problem": 38, "solution": "932718654"},
-    {"problem": 39, "solution": "840"},
-    {"problem": 40, "solution": "210"},
-    {"problem": 41, "solution": "7652413"},
-    {"problem": 42, "solution": "162"},
-    {"problem": 43, "solution": "16695334890"},
-    {"problem": 44, "solution": "5482660"},
-    {"problem": 45, "solution": "1533776805"},
-    {"problem": 46, "solution": "5777"},
-    {"problem": 47, "solution": "134043"},
-    {"problem": 48, "solution": "9110846700"},
-    {"problem": 49, "solution": "296962999629"},
-    {"problem": 50, "solution": "997651"},
-    {"problem": 51, "solution": "121313"},
-    {"problem": 52, "solution": "142857"},
-    {"problem": 53, "solution": "4075"},
-    {"problem": 54, "solution": "376"},
-    {"problem": 55, "solution": "249"},
-    {"problem": 56, "solution": "972"},
-    {"problem": 57, "solution": "153"},
-    {"problem": 58, "solution": "26241"},
-    {"problem": 59, "solution": "129448"},
-    {"problem": 60, "solution": "26033"},
-    {"problem": 61, "solution": "28684"},
-    {"problem": 62, "solution": "127035954683"},
-    {"problem": 63, "solution": "49"},
-    {"problem": 64, "solution": "1322"},
-    {"problem": 65, "solution": "272"},
-    {"problem": 66, "solution": "661"},
-    {"problem": 67, "solution": "7273"},
-    {"problem": 68, "solution": "6531031914842725"},
-    {"problem": 69, "solution": "510510"},
-    {"problem": 70, "solution": "8319823"},
-    {"problem": 71, "solution": "428570"},
-    {"problem": 72, "solution": "303963552391"},
-    {"problem": 73, "solution": "7295372"},
-    {"problem": 74, "solution": "402"},
-    {"problem": 75, "solution": "161667"},
-    {"problem": 76, "solution": "190569291"},
-    {"problem": 77, "solution": "71"},
-]
+
+answers_file = os.path.join(os.path.dirname(__file__), "../answers.json")
+with open(answers_file, encoding="utf8") as f:
+    ANSWERS = json.load(f)
 
 
 @pytest.mark.parametrize(
-    ["problem", "solution"],
-    [(item["problem"], item["solution"]) for item in SOLUTIONS],
-    ids=[f'problem {item["problem"]}' for item in SOLUTIONS],
+    ["problem", "answer"],
+    [(item["problem"], item["answer"]) for item in ANSWERS],
+    ids=[f'problem {item["problem"]}' for item in ANSWERS],
 )
-def test_problems(problem: int, solution: str) -> None:
+def test_problems(problem: int, answer: str) -> None:
     m = importlib.import_module(  # pylint: disable=invalid-name
         f"src.{problem:03d}.p{problem:03d}"
     )
     result = str(m.solve())
-    assert result == solution
+    assert result == answer
