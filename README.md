@@ -39,7 +39,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [027](src/027) | ✓  | ✓      |            |
 | [028](src/028) | ✓  | ✓      |            |
 | [029](src/029) | ✓  | ✓      |            |
-| [030](src/030) |    | ✓      |            |
+| [030](src/030) | ✓  | ✓      |            |
 | [031](src/031) |    | ✓      |            |
 | [032](src/032) |    | ✓      |            |
 | [033](src/033) |    | ✓      |            |

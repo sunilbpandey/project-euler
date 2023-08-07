@@ -30,6 +30,7 @@ import (
 	problem027 "github.com/sunilbpandey/project-euler/src/027"
 	problem028 "github.com/sunilbpandey/project-euler/src/028"
 	problem029 "github.com/sunilbpandey/project-euler/src/029"
+	problem030 "github.com/sunilbpandey/project-euler/src/030"
 )
 
 type ProblemFunc func() string
@@ -64,4 +65,5 @@ var problemFuncs = map[int]ProblemFunc{
 	27: problem027.Solve,
 	28: problem028.Solve,
 	29: problem029.Solve,
+	30: problem030.Solve,
 }
