@@ -2,6 +2,14 @@ package intutils
 
 import "math"
 
+func Digits(n string) []int {
+	digits := make([]int, len(n))
+	for i, digit := range n {
+		digits[i] = int(digit - '0')
+	}
+	return digits
+}
+
 func Factorial(n int) int {
 	factorial := 1
 	for m := 2; m <= n; m++ {

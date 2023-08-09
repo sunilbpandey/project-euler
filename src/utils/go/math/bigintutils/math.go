@@ -1,11 +1,15 @@
 package bigintutils
 
-import "math/big"
+import (
+	"math/big"
+
+	"github.com/sunilbpandey/project-euler/src/utils/go/math/intutils"
+)
 
 func DigitSum(n *big.Int) int {
 	sum := 0
-	for _, digit := range n.String() {
-		sum += int(digit - '0')
+	for _, digit := range intutils.Digits(n.String()) {
+		sum += digit
 	}
 	return sum
 }
