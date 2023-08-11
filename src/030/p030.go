@@ -1,34 +1,31 @@
 package problem030
 
-import "strconv"
+import (
+	"sort"
+	"strconv"
+
+	"github.com/sunilbpandey/project-euler/src/utils/go/math/intutils"
+	"github.com/sunilbpandey/project-euler/src/utils/go/sliceutils"
+)
 
 func Solve() string {
-	digits := make([]int, 10)
-	fifthPowers := make(map[int]int)
+	fifthPowers := make([]int, 10)
 	for d := 0; d < 10; d++ {
-		digits[d] = d
 		fifthPowers[d] = d * d * d * d * d
 	}
 
 	answer := 0
-	for _, a := range digits {
-		for _, b := range digits {
-			for _, c := range digits {
-				for _, d := range digits {
-					for _, e := range digits {
-						for _, f := range digits {
-							n := a*100000 + b*10000 + c*1000 + d*100 + e*10 + f
-							if n == 1 {
-								continue
-							}
+	for length := 2; length < 8; length++ {
+		for _, digits := range sliceutils.CombinationsWithReplacement([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, length) {
+			powerSum := 0
+			for _, d := range digits {
+				powerSum += fifthPowers[d]
+			}
+			powerSumDigits := intutils.Digits(strconv.Itoa(powerSum))
+			sort.Ints(powerSumDigits)
 
-							digitPowerSum := fifthPowers[a] + fifthPowers[b] + fifthPowers[c] + fifthPowers[d] + fifthPowers[e] + fifthPowers[f]
-							if digitPowerSum == n {
-								answer += digitPowerSum
-							}
-						}
-					}
-				}
+			if sliceutils.Equal(digits, powerSumDigits) {
+				answer += powerSum
 			}
 		}
 	}
