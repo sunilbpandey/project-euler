@@ -26,7 +26,7 @@ func Solve() string {
 	count := 13
 
 	for length := 3; length < 7; length++ {
-		for _, digits := range sliceutils.Product([]int{1, 3, 7, 9}, length) {
+		for digits := range sliceutils.Product([]int{1, 3, 7, 9}, length) {
 			if isCircularPrime(digits, primes) {
 				count++
 			}

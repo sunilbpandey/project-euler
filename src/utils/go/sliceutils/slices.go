@@ -1,20 +1,22 @@
 package sliceutils
 
-func CombinationsWithReplacement[T comparable](list []T, length int) [][]T {
-	combinations := make([][]T, 0)
-	if length == 1 {
-		for _, elem := range list {
-			combinations = append(combinations, []T{elem})
+func CombinationsWithReplacement[T comparable](list []T, length int) chan []T {
+	ch := make(chan []T)
+	go func() {
+		if length == 1 {
+			for _, elem := range list {
+				ch <- []T{elem}
+			}
+		} else {
+			for i, elem := range list {
+				for combo := range CombinationsWithReplacement(list[i:], length-1) {
+					ch <- append([]T{elem}, combo...)
+				}
+			}
 		}
-		return combinations
-	}
-
-	for i, elem := range list {
-		for _, combo := range CombinationsWithReplacement(list[i:], length-1) {
-			combinations = append(combinations, append([]T{elem}, combo...))
-		}
-	}
-	return combinations
+		close(ch)
+	}()
+	return ch
 }
 
 func Equal[T comparable](a, b []T) bool {
@@ -30,19 +32,22 @@ func Equal[T comparable](a, b []T) bool {
 	return true
 }
 
-func Product[T comparable](list []T, length int) [][]T {
-	products := make([][]T, 0)
-	if length == 1 {
-		for _, elem := range list {
-			products = append(products, []T{elem})
-		}
-		return products
-	}
+func Product[T comparable](list []T, length int) chan []T {
+	ch := make(chan []T)
 
-	for _, elem := range list {
-		for _, product := range Product(list, length-1) {
-			products = append(products, append([]T{elem}, product...))
+	go func() {
+		if length == 1 {
+			for _, elem := range list {
+				ch <- []T{elem}
+			}
+		} else {
+			for _, elem := range list {
+				for product := range Product(list, length-1) {
+					ch <- append([]T{elem}, product...)
+				}
+			}
 		}
-	}
-	return products
+		close(ch)
+	}()
+	return ch
 }
