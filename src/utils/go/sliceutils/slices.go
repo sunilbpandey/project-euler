@@ -36,7 +36,9 @@ func Product[T comparable](list []T, length int) chan []T {
 	ch := make(chan []T)
 
 	go func() {
-		if length == 1 {
+		if length == 0 {
+			ch <- []T{}
+		} else if length == 1 {
 			for _, elem := range list {
 				ch <- []T{elem}
 			}
