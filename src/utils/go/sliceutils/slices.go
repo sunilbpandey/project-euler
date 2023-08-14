@@ -19,6 +19,15 @@ func CombinationsWithReplacement[T comparable](list []T, length int) chan []T {
 	return ch
 }
 
+func Contains[T comparable](list []T, elem T) bool {
+	for _, value := range list {
+		if value == elem {
+			return true
+		}
+	}
+	return false
+}
+
 func Equal[T comparable](a, b []T) bool {
 	if len(a) != len(b) {
 		return false
