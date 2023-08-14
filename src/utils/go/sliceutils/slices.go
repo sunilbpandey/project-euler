@@ -32,6 +32,24 @@ func Equal[T comparable](a, b []T) bool {
 	return true
 }
 
+func Permutations[T comparable](list []T, length int) chan []T {
+	ch := make(chan []T)
+
+	go func() {
+		if length == 0 {
+			ch <- []T{}
+		} else {
+			for i, elem := range list {
+				for perm := range Permutations(append(append([]T{}, list[:i]...), list[i+1:]...), length-1) {
+					ch <- append([]T{elem}, perm...)
+				}
+			}
+		}
+		close(ch)
+	}()
+	return ch
+}
+
 func Product[T comparable](list []T, length int) chan []T {
 	ch := make(chan []T)
 
