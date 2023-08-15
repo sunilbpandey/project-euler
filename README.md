@@ -58,7 +58,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [046](src/046) | ✓  | ✓      |            |
 | [047](src/047) | ✓  | ✓      |            |
 | [048](src/048) | ✓  | ✓      |            |
-| [049](src/049) |    | ✓      |            |
+| [049](src/049) | ✓  | ✓      |            |
 | [050](src/050) |    | ✓      |            |
 | [051](src/051) |    | ✓      |            |
 | [052](src/052) |    | ✓      |            |

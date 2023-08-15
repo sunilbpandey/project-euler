@@ -1,10 +1,23 @@
 package intutils
 
-import "math"
+import (
+	"math"
+	"strconv"
+)
 
-func Digits(n string) []int {
-	digits := make([]int, len(n))
-	for i, digit := range n {
+func Digits(n interface{}) []int {
+	var str string
+	switch n.(type) {
+	case int:
+		str = strconv.Itoa(n.(int))
+	case string:
+		str = n.(string)
+	default:
+		panic("Unsupported type")
+	}
+
+	digits := make([]int, len(str))
+	for i, digit := range str {
 		digits[i] = int(digit - '0')
 	}
 	return digits
