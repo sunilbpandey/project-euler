@@ -20,3 +20,18 @@ func IsPandigital(n string) bool {
 	}
 	return true
 }
+
+func figurateNumbers(step int) chan int {
+	ch := make(chan int)
+	go func() {
+		for diff, n := 1, 0; ; diff += step {
+			n += diff
+			ch <- n
+		}
+	}()
+	return ch
+}
+
+func PentagonalNumbers() chan int {
+	return figurateNumbers(3)
+}
