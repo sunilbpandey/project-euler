@@ -2,3 +2,24 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 npx lint-staged
+
+# Go
+if [[ $(git diff-index --name-only --cached HEAD -- | grep "\.go$" | wc -l) -ne 0 ]]; then
+    echo "Running Go pre-commit hooks"
+    DIFF="$(gofmt -d -s .)"
+    if [[ -n $DIFF ]]; then
+        echo "$DIFF"
+        exit 1
+    fi
+    go test ./src/tests
+fi
+
+# Python
+if [[ $(git diff-index --name-only --cached HEAD -- | grep "\.py$" | wc -l) -ne 0 ]]; then
+    echo "Running Python pre-commit hooks"
+    mypy --strict src
+    black --check src
+    pylint src/**/*.py
+    flake8 src
+    pytest -v
+fi
