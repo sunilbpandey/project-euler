@@ -4,7 +4,6 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go/math/intutils"
 	"github.com/sunilbpandey/project-euler/src/utils/go/strutils"
 )
 
@@ -36,7 +35,7 @@ func Solve() string {
 
 	for i := len(triangle) - 2; i >= 0; i-- {
 		for j := 0; j < len(triangle[i]); j++ {
-			triangle[i][j] += intutils.Max(triangle[i+1][j], triangle[i+1][j+1])
+			triangle[i][j] += max(triangle[i+1][j], triangle[i+1][j+1])
 		}
 	}
 	return strconv.Itoa(triangle[0][0])

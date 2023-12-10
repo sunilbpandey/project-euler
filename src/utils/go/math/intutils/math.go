@@ -7,11 +7,11 @@ import (
 
 func Digits(n interface{}) []int {
 	var str string
-	switch n.(type) {
+	switch n := n.(type) {
 	case int:
-		str = strconv.Itoa(n.(int))
+		str = strconv.Itoa(n)
 	case string:
-		str = n.(string)
+		str = n
 	default:
 		panic("Unsupported type")
 	}
@@ -44,13 +44,6 @@ func Gcd(a int, b int) int {
 
 func Lcm(a int, b int) int {
 	return a * b / Gcd(a, b)
-}
-
-func Max(x, y int) int {
-	if x > y {
-		return x
-	}
-	return y
 }
 
 func Pow(x int, y int) int {

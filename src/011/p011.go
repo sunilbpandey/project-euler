@@ -3,7 +3,6 @@ package problem011
 import (
 	"strconv"
 
-	"github.com/sunilbpandey/project-euler/src/utils/go/math/intutils"
 	"github.com/sunilbpandey/project-euler/src/utils/go/strutils"
 )
 
@@ -42,22 +41,22 @@ func Solve() string {
 		for j := 0; j < 20; j++ {
 			if j < 17 {
 				product := grid[i][j] * grid[i][j+1] * grid[i][j+2] * grid[i][j+3]
-				maxProduct = intutils.Max(maxProduct, product)
+				maxProduct = max(maxProduct, product)
 			}
 
 			if i < 17 {
 				product := grid[i][j] * grid[i+1][j] * grid[i+2][j] * grid[i+3][j]
-				maxProduct = intutils.Max(maxProduct, product)
+				maxProduct = max(maxProduct, product)
 			}
 
 			if i < 17 && j < 17 {
 				product := grid[i][j] * grid[i+1][j+1] * grid[i+2][j+2] * grid[i+3][j+3]
-				maxProduct = intutils.Max(maxProduct, product)
+				maxProduct = max(maxProduct, product)
 			}
 
 			if i < 17 && j > 2 {
 				product := grid[i][j] * grid[i+1][j-1] * grid[i+2][j-2] * grid[i+3][j-3]
-				maxProduct = intutils.Max(maxProduct, product)
+				maxProduct = max(maxProduct, product)
 			}
 		}
 	}
