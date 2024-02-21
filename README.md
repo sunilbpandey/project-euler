@@ -90,6 +90,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [078](src/078) |    | ✓      |            |
 | [079](src/079) |    | ✓      |            |
 | [080](src/080) |    | ✓      |            |
+| [081](src/081) |    | ✓      |            |
 
 ## Usage
 
