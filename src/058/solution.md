@@ -1,5 +1,5 @@
 # Spiral primes
-Reusing the analysis from problem [28](src/028), the spiral is formed by concentric layers:
+Reusing the analysis from problem [28](/src/028), the spiral is formed by concentric layers:
 
 ```
 1

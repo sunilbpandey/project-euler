@@ -5,4 +5,4 @@ The minimal solution in x can be found using the [convergents](https://en.wikipe
 
 If $\frac{h_i}{k_i}$ denotes the sequence of convergents for $\sqrt{n}$, then the minimal solution in x equals $h_i$ for some $i$. It can be found by generating convergents until we find a pair (h, k) such that $h^2 - nk^2 = 1$.
 
-To generate the convergents, we can use the same method as we used in [problem 65](src/065).
+To generate the convergents, we can use the same method as we used in [problem 65](/src/065).

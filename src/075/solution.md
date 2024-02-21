@@ -1,5 +1,5 @@
 # Singular Integer Right Triangles
-This problem can be solved using the same approaches as [problem 9](src/009) and [problem 39](src/039).
+This problem can be solved using the same approaches as [problem 9](/src/009) and [problem 39](/src/039).
 
 ## Use Euclid's formula
 [Euclid's formula](https://en.wikipedia.org/wiki/Pythagorean_triple#Generating_a_triple) states that a Pythagorean triple is formed by integers:

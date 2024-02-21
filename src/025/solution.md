@@ -1,5 +1,5 @@
 # 1000-digit Fibonacci number
-This can be easily solved with brute force. As with [problem 16](src/016) and [problem 20](src/020), the only complication is handling very large numbers, and the same approach that was used in those problems can be used here.
+This can be easily solved with brute force. As with [problem 16](/src/016) and [problem 20](/src/020), the only complication is handling very large numbers, and the same approach that was used in those problems can be used here.
 
 But, there is a simpler way to calculate this using the [golden ratio](https://mathworld.wolfram.com/GoldenRatio.html).
 

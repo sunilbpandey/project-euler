@@ -1,5 +1,5 @@
 # Integer right triangles
-As we did in [problem 9](src/009), there are a couple of ways of solving this problem.
+As we did in [problem 9](/src/009), there are a couple of ways of solving this problem.
 
 ## Compute $b$ and $c$ from $a$ and $p$
 Given, $a + b + c = p$ and, $a^2 + b^2 = c^2$

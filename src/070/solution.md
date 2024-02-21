@@ -1,6 +1,6 @@
 # Totient permutation
 ## Brute force
-As discussed in [problem 69](src/069), we can calculate the totient function for all numbers, find the numbers where $\phi(n)$ is a permutation of $n$, and then minimize the value of $n/\phi(n)$. This approach works, but is very slow.
+As discussed in [problem 69](/src/069), we can calculate the totient function for all numbers, find the numbers where $\phi(n)$ is a permutation of $n$, and then minimize the value of $n/\phi(n)$. This approach works, but is very slow.
 
 ## Faster approach
 Recall from problem 69 that,
