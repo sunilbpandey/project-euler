@@ -93,6 +93,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 | [081](src/081) |    | ✓      |            |
 | [082](src/082) |    | ✓      |            |
 | [083](src/083) |    | ✓      |            |
+| [084](src/084) |    | ✓      |            |
 
 ## Usage
 
