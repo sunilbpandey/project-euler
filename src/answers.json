@@ -334,5 +334,9 @@
     {
         "problem": 84,
         "answer": "101524"
+    },
+    {
+        "problem": 85,
+        "answer": "2772"
     }
 ]
