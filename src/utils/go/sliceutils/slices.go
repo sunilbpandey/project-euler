@@ -80,3 +80,11 @@ func Product[T comparable](list []T, length int) chan []T {
 	}()
 	return ch
 }
+
+func Map[T1, T2 any](list []T1, f func(T1) T2) []T2 {
+	result := make([]T2, len(list))
+	for i, elem := range list {
+		result[i] = f(elem)
+	}
+	return result
+}
