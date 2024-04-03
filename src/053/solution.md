@@ -25,7 +25,7 @@ $$
 {n \choose 3} = \frac{n!}{3!(n - 3)!} = \frac{n(n - 1)(n - 2)}{6}
 $$
 
-It's easy to see that for $n \le 100$, none of these will be greater than 1000000.
+It's easy to see that for $n \le 100$, none of these will be greater than $1\,000\,000$.
 
 Also, note that,
 
@@ -54,9 +54,9 @@ $$
 r \le \frac{n - 1}{2}
 $$
 
-Combining all that, if ${n \choose r}$ is greater than 1000000 for some $r = m$, it will be greater than 1000000 for all values of $r$ from $m$ to $n - m$. For this $n$, there will be $n - 2m + 1$ such values of $r$.
+Combining all that, if ${n \choose r}$ is greater than $1\,000\,000$ for some $r = m$, it will be greater than $1\,000\,000$ for all values of $r$ from $m$ to $n - m$. For this $n$, there will be $n - 2m + 1$ such values of $r$.
 
-So, for each $n$, we just need to find the first value of $r$ such that ${n \choose r} > 1000000$.
+So, for each $n$, we just need to find the first value of $r$ such that ${n \choose r} > 1\,000\,000$.
 
 ## Using Pascal's Triangle
 It is also possible to solve this problem without any factorial calculation, by building Pascal's Triangle, known to ancient Indian mathematicians as Meru Prastaara, "the staircase of Mount Meru".
