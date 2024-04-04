@@ -1,6 +1,7 @@
 package strutils
 
 import (
+	"slices"
 	"strconv"
 	"strings"
 
@@ -28,4 +29,10 @@ func IsPalindrome(s string) bool {
 		}
 	}
 	return true
+}
+
+func Reverse(s string) string {
+	bytes := []byte(s)
+	slices.Reverse(bytes)
+	return string(bytes)
 }
