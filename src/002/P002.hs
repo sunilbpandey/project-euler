@@ -31,3 +31,6 @@ solution = div (s - 1) 2
         s | even b    = a
           | odd a     = b
           | otherwise = a + b
+
+main :: IO ()
+main = print solution

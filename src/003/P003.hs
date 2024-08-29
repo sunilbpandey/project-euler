@@ -24,3 +24,6 @@ factorize n =
 
 solution :: Int
 solution = fromIntegral . fst . last . factorize $ 600851475143
+
+main :: IO ()
+main = print solution
