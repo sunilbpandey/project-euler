@@ -24,6 +24,7 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 |            |                                       |
 | ---------- | ------------------------------------- |
 | Go         | 🟩🟩🟩🟩🟩🟩⬜️⬜️⬜️⬜️ (60/100)   |
+| Haskell    | ⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ (3/100)   |
 | Python     | 🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩 (100/100)        |
 | TypeScript | 🟩🟩⬜️⬜️⬜️⬜️⬜️⬜️⬜️⬜️ (25/100) |
 
@@ -35,6 +36,14 @@ Solutions to [Project Euler](https://projecteuler.net) problems.
 
 ```
 go test -v ./src/tests
+```
+
+### Haskell
+
+#### Solve a specific problem
+
+```
+runhaskell src/<num>/P<num>.hs
 ```
 
 ### Python
