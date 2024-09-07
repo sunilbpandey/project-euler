@@ -1,4 +1,4 @@
-module P007 where
+module P007.P007 where
 
 sqrtFloor :: Integer -> Integer
 sqrtFloor = floor . sqrt . fromIntegral

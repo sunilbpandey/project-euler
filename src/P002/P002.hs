@@ -1,4 +1,4 @@
-module P002 where
+module P002.P002 where
 
 -- Fibonacci series implemented as an infinite list
 fibonacci :: [Int]

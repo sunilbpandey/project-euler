@@ -1,4 +1,4 @@
-module P003 where
+module P003.P003 where
 
 import Data.List (group)
 
