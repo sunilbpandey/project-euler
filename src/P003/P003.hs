@@ -2,15 +2,7 @@ module P003.P003 where
 
 import Data.List (group)
 
-sqrtFloor :: Integer -> Integer
-sqrtFloor = floor . sqrt . fromIntegral
-
-isPrime :: Integral a => a -> [a] -> Bool
-isPrime _ [] = True
-isPrime n (p:ps) = mod n p /= 0 && isPrime n ps
-
-primes :: [Integer]
-primes = 2:[n|n <- [3,5..], isPrime n (takeWhile (<= sqrtFloor n) primes)]
+import ProjectEuler.PrimeUtils (primes, sqrtFloor)
 
 factorize :: Integer -> [(Integer, Int)]
 factorize n =
