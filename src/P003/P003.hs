@@ -31,6 +31,3 @@ largestFactor n
 
 solution :: Integer
 solution = largestFactor 600851475143
-
-main :: IO ()
-main = print solution

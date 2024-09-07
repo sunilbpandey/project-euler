@@ -43,7 +43,7 @@ go test -v ./src/tests
 #### Solve a specific problem
 
 ```
-runhaskell src/<num>/P<num>.hs
+runhaskell -isrc src/Main <PROBLEM>
 ```
 
 ### Python
