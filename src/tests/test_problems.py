@@ -16,7 +16,7 @@ with open(answers_file, encoding="utf8") as f:
 )
 def test_problems(problem: int, answer: str) -> None:
     m = importlib.import_module(  # pylint: disable=invalid-name
-        f"src.{problem:03d}.p{problem:03d}"
+        f"src.P{problem:03d}.p{problem:03d}"
     )
     result = str(m.solve())
     assert result == answer

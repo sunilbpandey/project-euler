@@ -5,7 +5,7 @@ describe("Project Euler", () => {
     "Problem $problem",
     async ({ problem, answer }) => {
       const str = problem.toString().padStart(3, "0");
-      const { solve } = await import(`../${str}/p${str}`);
+      const { solve } = await import(`../P${str}/p${str}`);
       expect(await solve()).toBe(answer);
     }
   );
