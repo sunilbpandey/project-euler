@@ -26,7 +26,7 @@ solution' :: Int
 solution' = fromIntegral . fst . last . factorize $ 600851475143
 
 -- Alternative solution, without calculating primes or keeping a list of factors
-largestFactor :: Int -> Int
+largestFactor :: Integer -> Integer
 largestFactor 1 = 1
 largestFactor n
     | even n    = largestFactor (div n 2)
@@ -37,7 +37,7 @@ largestFactor n
             | mod m d == 0 = max d $ largestFactor' (div m d) d
             | otherwise    = largestFactor' m (d+2)
 
-solution :: Int
+solution :: Integer
 solution = largestFactor 600851475143
 
 main :: IO ()
