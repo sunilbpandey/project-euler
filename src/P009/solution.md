@@ -42,3 +42,9 @@ $$m * (m + n) = 500$$
 Since $n > 0$, therefore $m < 22$
 
 Now, go through all possible values of $m$ and $n$.
+
+Finally,
+
+$$
+abc = (m^2 - n^2) \times 2mn \times (m^2 + n^2) = 2mn(m^4 - n^4)
+$$
