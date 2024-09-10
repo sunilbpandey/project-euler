@@ -1,18 +1,6 @@
 module P003.P003 where
 
-import Data.List (group)
-
-import ProjectEuler.PrimeUtils (primes, sqrtFloor)
-
-factorize :: Integer -> [(Integer, Int)]
-factorize n =
-    map (\l@(x:xs) -> (x, length l)) . group . factors n $ takeWhile (<= sqrtFloor n) primes
-    where
-        factors m [] = [m]
-        factors m (p:ps)
-            | p > m        = []
-            | mod m p == 0 = p:factors (div m p) (p:ps)
-            | otherwise    = factors m ps
+import ProjectEuler.PrimeUtils (factorize)
 
 solution' :: Int
 solution' = fromIntegral . fst . last . factorize $ 600851475143

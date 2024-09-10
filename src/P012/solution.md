@@ -14,7 +14,7 @@ $$
 
 Now, we can go through all the triangular numbers counting divisors until we find the answer, but that would require factorizing large numbers, which is inefficient and can be avoided.
 
-The nth triangular number is the sum of first $n$ natural numbers. So the formula for triangular numbers is,
+The $n^{th}$ triangular number is the sum of first $n$ natural numbers. So the formula for triangular numbers is,
 
 $$
 T_n = \frac{n * (n + 1)}{2}
