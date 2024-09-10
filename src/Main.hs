@@ -12,6 +12,7 @@ import qualified P006.P006 as P006 (solution)
 import qualified P007.P007 as P007 (solution)
 import qualified P008.P008 as P008 (solution)
 import qualified P009.P009 as P009 (solution)
+import qualified P010.P010 as P010 (solution)
 
 dispatch :: [(String, Integer)]
 dispatch =
@@ -24,6 +25,7 @@ dispatch =
     ,("7", P007.solution)
     ,("8", P008.solution)
     ,("9", P009.solution)
+    ,("10", P010.solution)
     ]
 
 main :: IO ()
