@@ -1,4 +1,11 @@
+# TypeScript
 node_modules/
 
+# Python
 .venv/
 __pycache__/
+
+# Haskell
+dist-*
+*.o
+*.hi
