@@ -1,4 +1,4 @@
-module P004.P004 where
+module P004.P004 (solution) where
 
 solution :: Integer
 solution = maximum [x | x <- candidates, d <- [949,951..999], mod x d == 0, is3digit $ div x d]

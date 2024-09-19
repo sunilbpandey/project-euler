@@ -1,4 +1,4 @@
-module P010.P010 where
+module P010.P010 (solution) where
 
 import ProjectEuler.PrimeUtils (primesUpTo)
 

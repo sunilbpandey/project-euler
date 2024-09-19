@@ -1,9 +1,9 @@
-module P003.P003 where
+module P003.P003 (solution) where
 
 import ProjectEuler.PrimeUtils (factorize)
 
-solution' :: Int
-solution' = fromIntegral . fst . last . factorize $ 600851475143
+_solution :: Int
+_solution = fromIntegral . fst . last . factorize $ 600851475143
 
 -- Alternative solution, without calculating primes or keeping a list of factors
 largestFactor :: Integer -> Integer

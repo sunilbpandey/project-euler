@@ -1,8 +1,9 @@
 module P017.P017 (solution) where
 
-import qualified Data.Map as Map
+import qualified Data.Map as M
 
-names = Map.fromList
+names :: M.Map Int String
+names = M.fromList
     [(0, "")
     ,(1, "one")
     ,(2, "two")
@@ -36,7 +37,7 @@ names = Map.fromList
 
 numberName :: Int -> String
 numberName n =
-    case Map.lookup n names of
+    case M.lookup n names of
         Just s  -> s
         Nothing
             | n < 100   -> numberName (n-units) ++ numberName units

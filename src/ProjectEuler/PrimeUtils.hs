@@ -3,8 +3,8 @@ module ProjectEuler.PrimeUtils where
 import Data.List (group)
 import qualified Data.Map as Map
 
-sqrtFloor :: Integer -> Integer
-sqrtFloor = floor . sqrt . fromIntegral
+sqrtFloor :: (Integral a, Integral c) => a -> c
+sqrtFloor = floor . sqrt . (fromIntegral :: Integral a => a -> Double)
 
 isPrime :: Integral a => a -> [a] -> Bool
 isPrime _ [] = True
@@ -32,10 +32,12 @@ primes' = 2:[n|n <- [3,5..], isPrime n (takeWhile (<= sqrtFloor n) primes)]
 
 factorize :: Integer -> [(Integer, Int)]
 factorize n =
-    map (\l@(x:xs) -> (x, length l)) . group . factors n $ takeWhile (<= sqrtFloor n) primes
+    map collapse . group . factors n $ takeWhile (<= sqrtFloor n) primes
     where
         factors m [] = [m]
         factors m (p:ps)
             | p > m        = []
             | mod m p == 0 = p:factors (div m p) (p:ps)
             | otherwise    = factors m ps
+        collapse []      = (1, 1)
+        collapse xs@(x:_) = (x, length xs)

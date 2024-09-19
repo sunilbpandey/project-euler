@@ -1,8 +1,9 @@
-module P008.P008 where
+module P008.P008 (solution) where
 
 import Data.Char (digitToInt)
 import Data.List (tails)
 
+input :: String
 input = "73167176531330624919225119674426574742355349194934\
         \96983520312774506326239578318016984801869478851843\
 		\85861560789112949495459501737958331952853208805511\
@@ -24,8 +25,8 @@ input = "73167176531330624919225119674426574742355349194934\
 		\05886116467109405077541002256983155200055935729725\
 		\71636269561882670428252483600823257530420752963450"
 
-solution' :: Integer
-solution' = toInteger $ maximum . map (product. map digitToInt) $ [take 13 $ drop n input | n <- [0..(length input - 13)]]
+_solution :: Integer
+_solution = toInteger $ maximum . map (product. map digitToInt) $ [take 13 $ drop n input | n <- [0..(length input - 13)]]
 
 solution :: Integer
 solution = toInteger $ maximum . map (product . take 13) . tails $ map digitToInt input

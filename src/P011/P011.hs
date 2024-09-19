@@ -1,5 +1,6 @@
-module P011.P011 where
+module P011.P011 (solution) where
 
+input :: [String]
 input = ["08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08",
     "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00",
     "81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65",
@@ -27,16 +28,16 @@ grid = map (map (read::String->Int) . words) input
 neighbours :: Int -> Int -> [[Int]]
 neighbours row col = [map gridAt $ neighbours' row col dir | dir <- ["N","NE","E","SE"]]
     where
-        neighbours' row col dir
-            | dir == "N" && row > 2  = zip north (repeat col)
-            | dir == "E" && col < 17 = zip (repeat row) east
-            | dir == "NE" && row > 2 && col < 17  = zip north east
-            | dir == "SE" && row < 17 && col < 17 = zip south east
+        neighbours' r c dir
+            | dir == "N" && r > 2  = zip north (repeat c)
+            | dir == "E" && c < 17 = zip (repeat r) east
+            | dir == "NE" && r > 2 && c < 17  = zip north east
+            | dir == "SE" && r < 17 && c < 17 = zip south east
             | otherwise = []
         north = [row - k | k <- [0..3]]
         east  = [col + k | k <- [0..3]]
         south = [row + k | k <- [0..3]]
-        gridAt (row,col) = grid!!row!!col
+        gridAt (r,c) = grid!!r!!c
 
 solution :: Integer
 solution = toInteger $ maximum [maxProduct row col | row <- [0..19], col <- [0..19]]

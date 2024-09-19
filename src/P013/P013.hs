@@ -1,5 +1,6 @@
-module P013.P013 where
+module P013.P013 (solution) where
 
+numbers :: [Integer]
 numbers = [37107287533902102798797998220837590246510135740250,
     46376937677490009712648124896970078050417018260538,
     74324986199524741059474233309513058123726617309629,
@@ -101,7 +102,8 @@ numbers = [37107287533902102798797998220837590246510135740250,
     20849603980134001723930671666823555245252804609722,
     53503534226472524250874054075591789781264330331690]
 
+firstDigits :: Int -> Integer -> Integer
+firstDigits k = (read::String->Integer) . take k . show
+
 solution :: Integer
 solution = (firstDigits 10 . sum) $ map (firstDigits 11) numbers
-    where
-        firstDigits k = (read::String->Integer) . take k . show

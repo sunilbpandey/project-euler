@@ -6,4 +6,4 @@ pow :: Integral a => a -> Int -> Integer
 pow x y = toInteger $ foldr (*) 1 (replicate y x)
 
 solution :: Integer
-solution = digitSum $ pow 2 1000
+solution = digitSum $ pow (2 :: Integer) 1000

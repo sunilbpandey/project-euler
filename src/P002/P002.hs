@@ -1,20 +1,22 @@
-module P002.P002 where
+{-# OPTIONS -Wno-incomplete-uni-patterns #-}
+
+module P002.P002 (solution) where
 
 -- Fibonacci series implemented as an infinite list
 fibonacci :: [Integer]
 fibonacci = 1:1:zipWith (+) fibonacci (tail fibonacci)
 
 -- Sum every even number less than 4000000
-solution' :: Integer
-solution' = sum . takeWhile (< 4000000) . filter even . tail $ fibonacci
+_solution :: Integer
+_solution = sum . takeWhile (< 4000000) . filter even . tail $ fibonacci
 
 every :: Int -> [a] -> [a]
 every n xs = case drop (n-1) xs of [] -> []
                                    (y:ys) -> y:every n ys
 
 -- Sum every third number less than 4000000
-solution'' :: Integer
-solution'' = sum . takeWhile (< 4000000) . every 3 $ fibonacci
+_solution' :: Integer
+_solution' = sum . takeWhile (< 4000000) . every 3 $ fibonacci
 
 takeUntil :: (a -> Bool) -> [a] -> [a]
 takeUntil _ [] = []

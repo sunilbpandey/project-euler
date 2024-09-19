@@ -1,4 +1,4 @@
-module P005.P005 where
+module P005.P005 (solution) where
 
 solution :: Integer
 solution = foldl lcm' 1 [2..20]

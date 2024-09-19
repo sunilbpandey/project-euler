@@ -1,4 +1,4 @@
-module P012.P012 where
+module P012.P012 (solution) where
 
 import Data.List (find)
 import Data.Maybe (fromJust)
