@@ -1,7 +1,15 @@
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
 
+import Data.Aeson
 import Data.Maybe (fromJust)
+import GHC.Generics
+import System.Console.GetOpt
 import System.Environment (getArgs)
+import System.Exit
+import qualified Data.ByteString.Lazy as BL
 
 import qualified P001.P001 as P001 (solution)
 import qualified P002.P002 as P002 (solution)
@@ -52,7 +60,54 @@ dispatch =
     ,("22", P022.solution)
     ]
 
+data Flag = Test deriving (Eq)
+
+options :: [OptDescr Flag]
+options =
+    [Option ['t'] ["test"] (NoArg Test) "test the solution"
+    ]
+
+parseArgs :: [String] -> IO ([Flag], String)
+parseArgs argv =
+    case getOpt Permute options argv of
+        (args, p:_, []) -> return (args, p)
+        (_, _, err)     -> do
+            putStrLn (concat err)
+            exitWith (ExitFailure 1)
+
+data Record = Record { problem :: Int, answer :: String } deriving (Generic, Show)
+
+instance FromJSON Record
+
+loadAnswers :: BL.ByteString -> [(Int, String)]
+loadAnswers contents = map parseRecord $ fromJust (decode contents :: Maybe [Record])
+    where
+        parseRecord (Record p a) = (p,a)
+
+solve :: String -> String
+solve = show . fromJust . flip lookup dispatch
+
+lookupAnswer :: [(Int, String)] -> String -> String
+lookupAnswer answers = fromJust . flip lookup answers . read
+
+test :: [(Int, String)] -> String -> String
+test answers p =
+    if expected == actual
+        then "PASS"
+        else "FAIL: " ++ expected ++ " /= " ++ actual
+    where
+        expected = lookupAnswer answers p
+        actual = solve p
+
+exec :: ([Flag], String) -> IO String
+exec (args, p) = do
+    if Test `elem` args
+        then do
+            contents <- BL.readFile "src/answers.json"
+            let answers = loadAnswers contents
+            return $ test answers p
+        else
+            return $ solve p
+
 main :: IO ()
-main = do
-    (problem:_) <- getArgs
-    print $ fromJust $ lookup problem dispatch
+main = getArgs >>= parseArgs >>= exec >>= putStrLn

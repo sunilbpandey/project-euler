@@ -43,7 +43,7 @@ go test -v ./src/tests
 #### Solve a specific problem
 
 ```
-runhaskell -isrc src/Main <PROBLEM>
+cabal run . -- <PROBLEM>
 ```
 
 ### Python
