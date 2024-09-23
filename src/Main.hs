@@ -33,6 +33,7 @@ import qualified P019.P019 as P019 (solution)
 import qualified P020.P020 as P020 (solution)
 import qualified P021.P021 as P021 (solution)
 import qualified P022.P022 as P022 (solution)
+import qualified P023.P023 as P023 (solution)
 
 dispatch :: [(String, Integer)]
 dispatch =
@@ -58,6 +59,7 @@ dispatch =
     ,("20", P020.solution)
     ,("21", P021.solution)
     ,("22", P022.solution)
+    ,("23", P023.solution)
     ]
 
 data Flag = Test deriving (Eq)

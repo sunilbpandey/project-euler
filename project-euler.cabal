@@ -42,6 +42,7 @@ executable project-euler
         P020.P020
         P021.P021
         P022.P022
+        P023.P023
         ProjectEuler.Common
         ProjectEuler.PrimeUtils
     build-depends:
